@@ -3,6 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: sans-serif, Times, serif;
 }
 
 .App{
@@ -18,4 +19,16 @@ body {
 
     display: grid;
     grid-template-columns: 3fr 7fr;
+}
+
+
+.ContentBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 10px;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
 }

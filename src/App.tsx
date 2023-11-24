@@ -2,7 +2,7 @@
   Task manager app
   - Qundet
 */
-import React from 'react';
+import React, { useState } from 'react';
 import {Routes, Route} from 'react-router-dom'
 
 import './App.css'
@@ -14,10 +14,16 @@ import UncompletedTasks from './components/ContentBars/UncompletedTasks/Uncomple
 import CompletedTasks from './components/ContentBars/CompletedTasks/CompletedTasks';
 
 function App() {
+
+  const [tasks, setTasks] = useState([
+    {id:1, title:'First Task', isDone: true},
+    {id:2, title:'First Task', isDone: true}
+  ])
+
   return (
     <div className="App">
       <MenuBar/>
-      <div className="TasksBar">
+      <div className="ContentBar">
         <Routes>
           <Route path='/' element= {<AllTasks/>}/>
           <Route path='/completed' element= {<CompletedTasks/>}/>
