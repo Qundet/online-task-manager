@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './AddTask.css'
 
-export default function AddTask() {
+interface AddTaskProps {
+   addTask: (text:string) => void;
+}
+
+export default function AddTask({addTask}: AddTaskProps) {
+  const [text, setText] = useState<string>('')
+
   return (
-    <React.Fragment>
-      <div className='add-task-block'>
-        <h1>Create new task</h1>
-        <textarea name="" id="" cols={30} rows={10}></textarea>
+    <>
+      <h1>Create new task</h1>
+      <div className='add-task_block'>        
+        <div className="form_block">
+          <textarea onChange={(e) => setText(e.target.value)} cols={30} rows={10}></textarea>
+          <button onClick={() => addTask(text)} className='save_button'>Save</button>
+        </div>        
       </div>
-    </React.Fragment>
+    </>
   )
 }

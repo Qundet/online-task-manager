@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Bad+Script&subset=cyrillic,latin);
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+
 body {
     display: flex;
     justify-content: center;
@@ -21,11 +24,15 @@ body {
     grid-template-columns: 3fr 7fr;
 }
 
+.content_block{
+    overflow: scroll
+}
 
-.ContentBar {
+.tasks_block {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0 10px;
+    gap: 20px;
+    padding: 0 20px;
 }
 
 h1 {

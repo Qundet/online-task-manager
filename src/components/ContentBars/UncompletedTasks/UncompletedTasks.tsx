@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function UncompletedTasks() {
   return (
-    <div>UncompletedTasks</div>
+    <div className="tasks_block">
+    </div>  
   )
 }

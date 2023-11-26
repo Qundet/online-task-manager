@@ -1,17 +1,23 @@
 import React from 'react'
-
 import Task from '../Task/Task'
 
-export default function AllTasks() {
+type TaskT = {
+  id: number,
+  title: string,
+  isDone: boolean
+}
+
+type TasksPropsT = {
+  tasks: Array<TaskT>
+}
+
+export default function AllTasks(props: TasksPropsT) {
   return (
-    <React.Fragment>
-      <Task title='qweqwe' description='qaqdeqeas' isDone={true}/>
-      <Task title='qweqwe' description='qaqdeqeas' isDone={true}/>
-      <Task title='qweqwe' description='qaqdeqeas' isDone={true}/>
-      <Task title='qweqwe' description='qaqdeqeas' isDone={true}/>
-      <Task title='qweqwe' description='qaqdeqeas' isDone={true}/>
-      <Task title='qweqwe' description='qaqdeqeas' isDone={true}/>
-      
-    </React.Fragment>
+    <>
+    <h1>All tasks</h1>
+    <div className="tasks_block">
+      {props.tasks.map(t => <Task key={t.id} id={t.id} title={t.title} isDone={t.isDone}/>)}
+    </div>
+    </>
   )
 }

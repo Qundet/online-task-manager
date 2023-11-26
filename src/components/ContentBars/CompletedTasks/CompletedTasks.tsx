@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function CompletedTasks() {
   return (
-    <div>CompletedTasks</div>
+    <div className="tasks_block">
+      
+    </div>  
   )
 }
