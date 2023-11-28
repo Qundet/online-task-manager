@@ -14,14 +14,8 @@ export default function MenuBar() {
         <MenuButton text = "New task"/>
       </Link>
       <Link to="/">
-        <MenuButton text = "All tasks"/>
-      </Link>
-      <Link to="completed">
-        <MenuButton text = "Completed"/>
-      </Link>
-      <Link to="uncompleted">
-        <MenuButton text = "Uncompleted"/>
-      </Link>
+        <MenuButton text = "Tasks"/>
+      </Link>      
     </div>
   );
 }

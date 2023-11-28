@@ -9,6 +9,7 @@ type TaskT = {
 
 type TasksPropsT = {
   tasks: Array<TaskT>
+  deleteTask: (id:number) => void
 }
 
 export default function AllTasks(props: TasksPropsT) {
@@ -16,7 +17,7 @@ export default function AllTasks(props: TasksPropsT) {
     <>
     <h1>All tasks</h1>
     <div className="tasks_block">
-      {props.tasks.map(t => <Task key={t.id} id={t.id} title={t.title} isDone={t.isDone}/>)}
+      {props.tasks.map(t => <Task deleteTask={props.deleteTask} key={t.id} id={t.id} title={t.title} isDone={t.isDone}/>)}
     </div>
     </>
   )

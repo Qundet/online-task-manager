@@ -10,6 +10,7 @@ type TaskPropsT = {
     title: string;
     // description: string; // coming soon
     isDone: boolean;
+    deleteTask: (id:number) => void;
 }
 
 export default function (props: TaskPropsT) {
@@ -18,7 +19,7 @@ export default function (props: TaskPropsT) {
         <div className="title">{props.id}) {props.title}</div>
         <div className="buttons">          
           <div className="confirm"><img src={confirmIcon} alt="check" /></div>
-          <div className="delete"><img src={deleteIcon} alt="delete" /></div>
+          <div onClick={() => props.deleteTask(props.id)} className="delete"><img src={deleteIcon} alt="delete" /></div>
         </div>
     </div>
 
