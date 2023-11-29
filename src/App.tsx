@@ -8,14 +8,18 @@ import {Routes, Route} from 'react-router-dom'
 import './App.css'
 
 import MenuBar from './components/MenuBar/MenuBar';
-import AllTasks from './components/ContentBars/AllTasks/AllTasks';
+import Tasks from './components/ContentBars/Tasks';
 import AddTask from './components/ContentBars/AddTask/AddTask';
 
 function App() {
 
   const [tasks, setTasks] = useState([
-    {id:0, title:'First Task', isDone: true},
-    {id:1, title:'First Task', isDone: true}
+    {id:0, title:'0 Task', isDone: true},
+    {id:1, title:'1 Task', isDone: true},
+    {id:2, title:'2 Task', isDone: true},
+    {id:3, title:'3 Task', isDone: true},
+    {id:4, title:'4 Task', isDone: true},
+    {id:5, title:'5 Task', isDone: true},
   ])
 
   // New task adding
@@ -26,11 +30,13 @@ function App() {
     setTasks(tasks)
   }
 
-  //Task deleting
+  //Task delete
   function deleteTask(id: number): void {
-    tasks.map(t => t.id === id ? delete tasks[id]: null)
-    setTasks(tasks)
-    console.log(tasks);
+    let tmpTasks = tasks.filter((task) => task.id !== id)
+    // Changing ids
+    for (let idx = id; idx < tmpTasks.length; idx++)
+      tmpTasks[idx].id = idx;
+    setTasks(tmpTasks)
   }
 
   return (
@@ -38,7 +44,7 @@ function App() {
       <MenuBar/>
       <div className='content_block'>
         <Routes>
-          <Route path='/' element= {<AllTasks tasks={tasks} deleteTask={deleteTask}/>}/>
+          <Route path='/' element= {<Tasks tasks={tasks} deleteTask={deleteTask}/>}/>
           <Route path='/add-task' element= {<AddTask addTask={addTask}/>}/>
         </Routes>
       </div>

@@ -13,7 +13,7 @@ type TaskPropsT = {
     deleteTask: (id:number) => void;
 }
 
-export default function (props: TaskPropsT) {
+function Task(props: TaskPropsT) {
   return (
     <div className="task_block">
         <div className="title">{props.id}) {props.title}</div>
@@ -25,3 +25,5 @@ export default function (props: TaskPropsT) {
 
   )
 }
+
+export default Task

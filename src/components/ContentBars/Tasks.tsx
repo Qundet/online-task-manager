@@ -1,5 +1,5 @@
 import React from 'react'
-import Task from '../Task/Task'
+import Task from './Task/Task'
 
 type TaskT = {
   id: number,
@@ -12,7 +12,7 @@ type TasksPropsT = {
   deleteTask: (id:number) => void
 }
 
-export default function AllTasks(props: TasksPropsT) {
+function Tasks(props: TasksPropsT) {
   return (
     <>
     <h1>All tasks</h1>
@@ -22,3 +22,5 @@ export default function AllTasks(props: TasksPropsT) {
     </>
   )
 }
+
+export default Tasks
